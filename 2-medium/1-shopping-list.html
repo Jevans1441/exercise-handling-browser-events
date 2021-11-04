@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping List</title>
 </head>
+
 <body>
   <!-- HTML goes here -->
   <h1>Things to Buy</h1>
@@ -25,7 +27,21 @@
 
   <script>
     // JavaScript goes here
-    
+    const addItem = document.querySelector('#newItemForm');
+    const myParentList = document.querySelector('#shoppingList')
+    const input = document.querySelector('#item');
+
+
+    addItem.addEventListener('submit', function () {
+      event.preventDefault();
+
+      let newListChild = document.createElement('li')
+      newListChild.innerText = input.value;
+      myParentList.appendChild(newListChild);
+    });
+
+
   </script>
 </body>
+
 </html>

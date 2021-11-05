@@ -40,14 +40,15 @@
 
       //delete button
       let deleteBtn = document.createElement("button");
-      deleteBtn.innerHTML = 'Delete';
       deleteBtn.type = 'submit';
-      deleteBtn.classList.add('delete');
-      newListChild.appendChild(deleteBtn);
+      deleteBtn.innerHTML = 'Delete'; //fills text for button
+      deleteBtn.classList.add('delete'); //adds a clast list
+      newListChild.appendChild(deleteBtn); //appending deleteBtn to li element
 
 
       deleteBtn.addEventListener('click', function () {
         newListChild.remove();
+
       })
 
       // let listClass = document.querySelector('shoppingListChild')

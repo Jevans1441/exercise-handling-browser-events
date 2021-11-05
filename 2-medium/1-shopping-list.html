@@ -12,10 +12,7 @@
   <h1>Things to Buy</h1>
 
   <ul id="shoppingList">
-    <li>Waffles</li>
-    <li>Pancakes</li>
-    <li>Bacon</li>
-    <li>Eggs</li>
+    <li class='shoppingListChild'>Permanant Fixture</li>
   </ul>
 
   <form id="newItemForm">
@@ -31,13 +28,32 @@
     const myParentList = document.querySelector('#shoppingList')
     const input = document.querySelector('#item');
 
-
     addItem.addEventListener('submit', function () {
       event.preventDefault();
 
+      //list elements
       let newListChild = document.createElement('li')
-      newListChild.innerText = input.value;
+      newListChild.classList.add('shoppingListChild'); //adding class
+      newListChild.innerText = input.value; //saves text to input when added
       myParentList.appendChild(newListChild);
+      input.value = ''; //empties input 
+
+      //delete button
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerHTML = 'Delete';
+      deleteBtn.type = 'submit';
+      deleteBtn.classList.add('delete');
+      newListChild.appendChild(deleteBtn);
+
+
+      deleteBtn.addEventListener('click', function () {
+
+      })
+
+      // let listClass = document.querySelector('shoppingListChild')
+      // listClass.addEventListener('click', function () {
+      //   listClass.style.textDecoration = 'line-through';
+      // })
     });
 
 
